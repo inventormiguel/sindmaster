@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Todos os valores da paleta vêm de BRAND.cores, aplicados no RootLayout. */
+@theme inline {
+  --color-primaria: var(--cor-primaria);
+  --color-primaria-escura: var(--cor-primaria-escura);
+  --color-primaria-clara: var(--cor-primaria-clara);
+  --color-destaque: var(--cor-destaque);
+  --color-tinta: var(--cor-tinta);
+  --color-suave: var(--cor-texto-suave);
+  --color-fundo: var(--cor-fundo);
+  --color-superficie: var(--cor-superficie);
+  --color-borda: var(--cor-borda);
+  --color-perigo: var(--cor-perigo);
+  --color-navegacao: var(--cor-navegacao);
+  --color-verde: var(--cor-verde);
+  --font-sans: "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html, body { background: var(--cor-fundo); color: var(--cor-tinta); font-family: var(--font-sans); }
+  html { scroll-behavior: smooth; scroll-padding-top: 6rem; }
+  body { line-height: 1.55; }
+  * { font-variant-ligatures: none; }
+  button, select, summary { cursor: pointer; }
+  :where(a, button, input, select, textarea, summary):focus-visible { outline: 3px solid var(--cor-primaria); outline-offset: 4px; }
+  ::selection { background: var(--cor-primaria-clara); color: var(--cor-primaria-escura); }
+  input::placeholder, textarea::placeholder { color: var(--cor-texto-suave); opacity: 1; }
+}
+
+@layer components {
+  .ui-cartao { box-shadow: 0 3px 12px rgb(19 47 66 / 3%); }
+  .ui-numero { border-top: 3px solid var(--cor-primaria); }
+  .tabela-negocio tbody tr { transition: background 150ms; }
+  .tabela-negocio tbody tr:hover { background: var(--cor-fundo); }
+  .cabecalho-pagina { padding-bottom: 1.25rem; border-bottom: 1px solid var(--cor-borda); }
+  .sobretitulo { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .linha-dourada { width: 2.5rem; height: 3px; background: var(--cor-destaque); }
+  .site-container { width: min(1200px, 100% - 3rem); margin-inline: auto; }
+  .site-cabecalho { background: rgb(255 255 255 / 96%); border-bottom: 1px solid var(--cor-borda); }
+  .hero-inicio { position: relative; overflow: hidden; background: #edf2f2; }
+  .hero-inicio::before { content: ""; position: absolute; inset: 0 0 0 50%; background: #e3eceb; border-left: 1px solid rgb(39 93 119 / 8%); }
+  .hero-grade { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 2rem; align-items: center; padding-block: 4.5rem; }
+  .hero-titulo { font-size: clamp(2.6rem, 4.6vw, 4.25rem); line-height: 1.08; font-weight: 600; letter-spacing: -.055em; max-width: 650px; }
+  .hero-titulo em { font-style: normal; color: var(--cor-verde); }
+  .hero-visual { position: relative; padding: 1.5rem 0; }
+  .hero-etiqueta { display: flex; align-items: center; gap: .75rem; background: white; border: 1px solid var(--cor-borda); border-radius: .9rem; padding: 1rem 1.25rem; box-shadow: 0 12px 40px rgb(19 47 66 / 8%); max-width: 330px; }
+  .publico-faixa { border-block: 1px solid var(--cor-borda); background: white; }
+  .recurso-icone { display: flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--cor-borda); border-radius: 12px; background: var(--cor-fundo); color: var(--cor-primaria); }
+  .recurso-cartao { border: 1px solid var(--cor-borda); border-radius: 16px; padding: 1.75rem; background: white; transition: border-color 150ms, transform 150ms; }
+  .recurso-cartao:hover { border-color: var(--cor-primaria); transform: translateY(-2px); }
+  .bloco-escuro { background: var(--cor-navegacao); color: white; position: relative; overflow: hidden; }
+  .painel-lateral { background: var(--cor-navegacao); color: #d9e6eb; }
+  .menu-grupo { color: #a7becb; font-size: .625rem; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+  .menu-link { display: flex; align-items: center; gap: .75rem; min-width: 0; padding: .55rem .75rem; border: 1px solid transparent; border-radius: 8px; font-size: .8125rem; transition: background 150ms; }
+  .menu-link:hover { background: rgb(255 255 255 / 7%); }
+  .menu-link[aria-current="page"] { color: white; background: #294f65; border-color: #3b657c; box-shadow: inset 3px 0 var(--cor-destaque); font-weight: 600; }
+  .painel-lateral :where(a, button, summary):focus-visible { outline-color: var(--cor-destaque); }
+  .painel-conteudo { max-width: 1600px; width: 100%; margin-inline: auto; }
+  .boas-vindas { background: var(--cor-navegacao); color: white; border-radius: 18px; padding: 2rem; position: relative; overflow: hidden; }
+  .boas-vindas::after { content: ""; position: absolute; right: -30px; top: -85px; width: 280px; height: 280px; border: 1px solid #3d596b; border-radius: 50%; pointer-events: none; }
+  .auth-layout { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+  .auth-marca { display: flex; flex-direction: column; justify-content: space-between; padding: 3rem 4rem; background: var(--cor-navegacao); color: white; }
+  .auth-conteudo { display: flex; flex-direction: column; justify-content: center; padding: 3rem 2rem; }
+  .auth-form { width: 100%; max-width: 440px; margin-inline: auto; }
+  .pular-conteudo { position: fixed; top: .5rem; left: .5rem; z-index: 100; transform: translateY(-160%); background: white; color: var(--cor-tinta); padding: .75rem 1rem; border-radius: .5rem; }
+  .pular-conteudo:focus { transform: translateY(0); }
+}
+
+@media (max-width: 1023px) {
+  .auth-marca { padding: 2rem; }
+}
+@media (max-width: 767px) {
+  .site-container { width: calc(100% - 2rem); }
+  .hero-inicio::before { display: none; }
+  .hero-grade { grid-template-columns: 1fr; padding-block: 3rem; gap: 1rem; }
+  .hero-visual { max-width: 480px; width: 100%; margin-inline: auto; }
+  .auth-layout { grid-template-columns: 1fr; }
+  .auth-marca { padding: 1.5rem; }
+  .auth-marca-editorial { display: none; }
+  .auth-conteudo { padding: 2rem 1rem; }
+  .boas-vindas { padding: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+}
+@media print {
+  html, body { background: white; }
+  .ui-cartao { box-shadow: none; break-inside: avoid; }
+  .boas-vindas { background: white; color: var(--cor-tinta); border: 1px solid var(--cor-borda); }
+  .boas-vindas::after { display: none; }
+}

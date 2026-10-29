@@ -1,0 +1,1 @@
+ALTER TABLE "rotina_modelos" ADD COLUMN "mes_referencia" integer;
