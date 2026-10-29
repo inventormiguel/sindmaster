@@ -1,0 +1,28 @@
+# dependências
+**/node_modules
+
+# next.js
+**/.next/
+**/out/
+**/build
+next-env.d.ts
+*.tsbuildinfo
+
+# dados locais (banco PGlite, segredo da instalação, uploads)
+**/.data/
+**/.layout/
+
+# testes
+**/coverage
+
+# sistema
+.DS_Store
+*.pem
+npm-debug.log*
+
+# variáveis de ambiente (só o exemplo vai para o git)
+.env*
+!.env.example
+
+# vercel
+.vercel

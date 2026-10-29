@@ -1,0 +1,14 @@
+.git
+.data
+.layout
+.next
+node_modules
+.env*
+.agents
+skills-lock.json
+*.command
+*.tsbuildinfo
+contexto.md
+AGENTS.md
+CLAUDE.md
+COMECE-AQUI.md

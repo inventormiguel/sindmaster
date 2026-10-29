@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+/*
+ * Cores provisórias da marca (as mesmas de src/lib/brand.ts).
+ * Identidade visual definitiva entra junto com o nome final do produto.
+ */
+:root {
+  --cor-primaria: #0f766e;
+  --cor-primaria-escura: #115e59;
+  --cor-primaria-clara: #ccfbf1;
+  --cor-destaque: #d97706;
+  --cor-tinta: #0f172a;
+  --cor-texto-suave: #475569;
+  --cor-fundo: #f6f7f5;
+  --cor-superficie: #ffffff;
+  --cor-borda: #e2e8f0;
+  --cor-perigo: #b91c1c;
+}
+
+@theme inline {
+  --color-primaria: var(--cor-primaria);
+  --color-primaria-escura: var(--cor-primaria-escura);
+  --color-primaria-clara: var(--cor-primaria-clara);
+  --color-destaque: var(--cor-destaque);
+  --color-tinta: var(--cor-tinta);
+  --color-suave: var(--cor-texto-suave);
+  --color-fundo: var(--cor-fundo);
+  --color-superficie: var(--cor-superficie);
+  --color-borda: var(--cor-borda);
+  --color-perigo: var(--cor-perigo);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-tinta);
+  font-family: var(--font-sans);
+}
+
+* {
+  font-variant-ligatures: none;
+}
