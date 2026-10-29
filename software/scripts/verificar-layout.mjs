@@ -1,6 +1,6 @@
 /**
  * Verificação de layout (Playwright, Chromium headless próprio): faz login com o usuário
- * de demonstração, abre as páginas a 1440 e 1280 px, salva capturas em .layout/ e falha
+ * de demonstração, abre as páginas a 1440, 1280 e 390 px, salva capturas em .layout/ e falha
  * se houver rolagem horizontal da página, botão/link/selo com conteúdo cortado, botão
  * fora do contêiner com overflow, ou página com erro.
  *
@@ -11,7 +11,7 @@ import { chromium } from "playwright";
 import fs from "node:fs";
 
 const BASE = (process.env.LAYOUT_BASE ?? "http://localhost:3241").replace(/\/+$/, "");
-const LARGURAS = [1440, 1280];
+const LARGURAS = [1440, 1280, 390];
 const PUBLICAS = ["/", "/login", "/cadastro"];
 const PAINEL = [
   "/app",
